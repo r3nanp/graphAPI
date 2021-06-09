@@ -6,6 +6,16 @@ type Product {
 }
 
 type Query {
-  products: [Product]
-  product(id: ID): Product
+  products: [Product!]
+  product(id: ID!): Product
+}
+
+input ProductInput {
+  title: String!
+  price: Int!
+  quantity: Int
+}
+
+type Mutation {
+  createProduct(data: ProductInput): Product
 }
